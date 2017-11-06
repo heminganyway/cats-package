@@ -1,4 +1,4 @@
-#' A Cat Function
+#' A SO Function
 #'
 #' This function allows you to express your love of cats.
 #' @param love Do you love cats? Defaults to TRUE.
@@ -7,11 +7,12 @@
 #' @examples
 #' cat_function()
 
-cat_function <- function(love=TRUE){
-  if(love==TRUE){
-    print("I love cats!")
-  }
-  else {
-    print("I am not a cool person.")
-  }
+library(dplyr)
+
+all_cust <- function(so,isvisit){
+  all_cust <- so%>%
+    mutate(luck = isvisit + 1)%>%
+    filter(deseasonedSales > isvisit)
+  
+  
 }
